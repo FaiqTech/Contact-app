@@ -2,6 +2,7 @@ const name = document.querySelector("#name");
 const surname = document.querySelector("#surname");
 const phone = document.querySelector("#phone");
 const form = document.querySelector("form");
+const submitButton = form.querySelector("button[type='submit']");
 
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(location.search);
@@ -14,6 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
     name.value = nameParam;
     surname.value = surnameParam;
     phone.value = phoneParam;
+    submitButton.textContent = "Create";
+  } else {
+    submitButton.textContent = "Submit";
   }
 });
 
